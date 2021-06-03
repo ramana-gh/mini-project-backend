@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const routes = require('./routes');
 const validation = require('express-validation');
 require('dotenv').config();
+const PORT = process.env.PORT || '3001';
 
 const app = express();
 
@@ -18,5 +19,5 @@ app.use((err, req, res, next) => {
 
 mongoose.connect('mongodb://127.0.0.1:27017/miniProjectDB', { useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
     console.log('Connected to MongoDB');
-    app.listen(process.env.PORT||3001, () => console.log('Listening to port: 3001'));
+    app.listen(PORT, () => console.log(`Listening to port: ${PORT}`));
 });
