@@ -17,7 +17,7 @@ app.use((err, req, res, next) => {
     return res.status(401).send({message: err.message});
 });
 
-mongoose.connect('mongodb://127.0.0.1:27017/miniProjectDB', { useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
+mongoose.connect('mongodb+srv://Ramana:gotvj7YRCb99Ow5J@departmentlibrary.3xnhs.mongodb.net/departmentLibraryDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
     console.log('Connected to MongoDB');
     app.listen(PORT, () => console.log(`Listening to port: ${PORT}`));
 });
