@@ -1,0 +1,33 @@
+{
+  "name": "department-library-backend",
+  "version": "1.0.0",
+  "description": "Source code for Department Library Backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "supervisor src/app.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "express-validation": "^3.0.8",
+    "joi": "^17.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.7",
+    "supervisor": "^0.12.0",
+    "unirest": "^0.6.0",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "node",
+    "node.js",
+    "express",
+    "express.js",
+    "mongo",
+    "mongo db",
+    "mongoose"
+  ],
+  "author": "Ramanakishore",
+  "license": "RGUKT"
+}

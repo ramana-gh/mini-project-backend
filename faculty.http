@@ -1,0 +1,150 @@
+POST http://localhost:3000/faculty/register HTTP/1.1
+Content-Type: application/json
+
+{    
+    "facultyId": "B161807",
+    "name": "Sravan",
+    "qualification": "PHD-Maths",
+    "subjectsTaught": "Maths, Probability",
+    "mobile": "9490009276",
+    "email": "sravan@gmail.com",
+    "address": "basar",
+    "password": "Srav@B16"
+}
+###
+POST http://localhost:3000/faculty/login HTTP/1.1
+Content-Type: application/json
+
+{    
+    "facultyId": "B161807",
+    "password": "Srav@B16"
+}
+###
+POST http://localhost:3000/faculty/logout HTTP/1.1
+Content-Type: application/json
+
+{    
+    "facultyId": "B161807"
+}
+###
+GET http://localhost:3000/faculty/get-profile HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTkzNjMyNzYsImV4cCI6MTYxOTM2Njg3Nn0.1PVaNUJFZeC2UKJkRWmAdyqAh1lniwN8sLcEhec9g9U
+###
+PATCH  http://localhost:3000/faculty/update-profile HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTkzNjc2MTksImV4cCI6MTYxOTM3MTIxOX0.vdfk318eA-zYJ5f4xiqqGQ0f_8WD7YPWMfsXlBdycDg
+
+{    
+    "facultyId": "B161807",
+    "name": "Sravan Mathangi",
+    "qualification": "PHD-Maths",
+    "subjectsTaught": "Maths, Probability",
+    "mobile": "9490009276",
+    "email": "sravan@gmail.com",
+    "address": "basar"
+}
+###
+DELETE http://localhost:3000/faculty/delete-account HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTkzNjMyNzYsImV4cCI6MTYxOTM2Njg3Nn0.1PVaNUJFZeC2UKJkRWmAdyqAh1lniwN8sLcEhec9g9U
+###
+POST http://localhost:3000/faculty/forgot-password HTTP/1.1
+Content-Type: application/json
+
+{    
+    "facultyId": "B161807"
+}
+###
+POST http://localhost:3000/faculty/reset-password HTTP/1.1
+Content-Type: application/json
+
+{    
+    "facultyId": "B161807",
+    "password": "Rgukt@321",
+    "repeatPassword": "Rgukt321"
+}
+###
+POST http://localhost:3000/faculty/send-otp HTTP/1.1
+Content-Type: application/json
+
+{    
+    "mobile": "9490009276"
+}
+###
+POST http://localhost:3000/faculty/verify-otp HTTP/1.1
+Content-Type: application/json
+
+{    
+    "otp": "95094",
+    "requestId": "jt8nwzioehyf7md"
+}
+###
+GET http://localhost:3000/faculty/get-book HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE4MDciLCJpYXQiOjE2MTk0NDAxNDYsImV4cCI6MTYxOTQ0Mzc0Nn0.QVqEDFyr3j2qU46kxIzy9PsytQ5CweMnnnquRtmtVTc
+
+{    
+    "isbn": "1234"
+}
+###
+GET http://localhost:3000/faculty/get-books-by-name HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTkzNjMyNzYsImV4cCI6MTYxOTM2Njg3Nn0.1PVaNUJFZeC2UKJkRWmAdyqAh1lniwN8sLcEhec9g9U
+
+{    
+    "name": "Algo"
+}
+###
+POST http://localhost:3000/faculty/add-tags HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE4MDciLCJpYXQiOjE2MTk0NDAxNDYsImV4cCI6MTYxOTQ0Mzc0Nn0.QVqEDFyr3j2qU46kxIzy9PsytQ5CweMnnnquRtmtVTc
+
+{    
+    "isbn": "1234",
+    "tags": ["GATE", "APTITUDE", "CODING", "QUANT"]
+}
+###
+DELETE http://localhost:3000/faculty/remove-tags HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE4MDciLCJpYXQiOjE2MTk0NDAxNDYsImV4cCI6MTYxOTQ0Mzc0Nn0.QVqEDFyr3j2qU46kxIzy9PsytQ5CweMnnnquRtmtVTc
+
+{    
+    "isbn": "1234",
+    "tags": ["CODING"]
+}
+###
+POST http://localhost:3000/faculty/add-rating HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE4MDciLCJpYXQiOjE2MTk0NDAxNDYsImV4cCI6MTYxOTQ0Mzc0Nn0.QVqEDFyr3j2qU46kxIzy9PsytQ5CweMnnnquRtmtVTc
+
+{    
+    "isbn": "1234",
+    "rating": "4.5"
+}
+###
+PATCH http://localhost:3000/faculty/change-rating HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE4MDciLCJpYXQiOjE2MTk0NDAxNDYsImV4cCI6MTYxOTQ0Mzc0Nn0.QVqEDFyr3j2qU46kxIzy9PsytQ5CweMnnnquRtmtVTc
+
+{    
+    "isbn": "1234",
+    "rating": "4.3"
+}
+###
+DELETE http://localhost:3000/faculty/remove-rating HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE4MDciLCJpYXQiOjE2MTk0NDAxNDYsImV4cCI6MTYxOTQ0Mzc0Nn0.QVqEDFyr3j2qU46kxIzy9PsytQ5CweMnnnquRtmtVTc
+
+{    
+    "isbn": "1234"
+}
+###
+GET http://localhost:3000/faculty/get-books-by-tags HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE4MDciLCJpYXQiOjE2MTk0NDAxNDYsImV4cCI6MTYxOTQ0Mzc0Nn0.QVqEDFyr3j2qU46kxIzy9PsytQ5CweMnnnquRtmtVTc
+
+{    
+    "tags": ["GATE", "APTITUDE","CODING"]
+}
+###

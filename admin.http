@@ -1,0 +1,191 @@
+POST http://localhost:3000/admin/register HTTP/1.1
+Content-Type: application/json
+
+{    
+    "adminId": "B161408",
+    "name": "Vineeth",
+    "mobile": "7893721397",
+    "email": "vineeth@gmail.com",
+    "address": "basar",
+    "password": "Vine@B16"
+}
+###
+POST http://localhost:3000/admin/login HTTP/1.1
+Content-Type: application/json
+
+{    
+    "adminId": "B161408",
+    "password": "Rgukt@123"
+}
+###
+POST http://localhost:3000/admin/logout HTTP/1.1
+Content-Type: application/json
+
+{    
+    "adminId": "B161408"
+}
+###
+GET http://localhost:3000/admin/get-profile HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTk1Mjg1NDIsImV4cCI6MTYxOTUzMjE0Mn0.MagpzvsVqiT0Yqsu6StVrerQKf6tzCVRSgk-W50oTSw
+###
+PATCH  http://localhost:3000/admin/update-profile HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTk1Mjg1NDIsImV4cCI6MTYxOTUzMjE0Mn0.MagpzvsVqiT0Yqsu6StVrerQKf6tzCVRSgk-W50oTSw
+
+{    
+    "adminId": "B161408",
+    "name": "Vineeth Gogu",
+    "mobile": "7893721397",
+    "email": "vineeth@gmail.com",
+    "address": "basar"
+}
+###
+DELETE http://localhost:3000/admin/delete-account HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTk1Mjg1NDIsImV4cCI6MTYxOTUzMjE0Mn0.MagpzvsVqiT0Yqsu6StVrerQKf6tzCVRSgk-W50oTSw
+###
+POST http://localhost:3000/admin/forgot-password HTTP/1.1
+Content-Type: application/json
+
+{    
+    "adminId": "B161408"
+}
+###
+POST http://localhost:3000/admin/reset-password HTTP/1.1
+Content-Type: application/json
+
+{    
+    "adminId": "B161408",
+    "password": "Rgukt@123",
+    "repeatPassword": "Rgukt@123"
+}
+###
+POST http://localhost:3000/admin/send-otp HTTP/1.1
+Content-Type: application/json
+
+{    
+    "mobile": "7893721397"
+}
+###
+POST http://localhost:3000/admin/verify-otp HTTP/1.1
+Content-Type: application/json
+
+{    
+    "otp": "95094",
+    "requestId": "jt8nwzioehyf7md"
+}
+###
+POST http://localhost:3000/admin/add-book HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTk0Mzk5OTIsImV4cCI6MTYxOTQ0MzU5Mn0.SaT-uiaCGRbn84ZynvvmPLWtc_0nNTZxnOTqa8LbuNA
+
+{    
+    "name": "DS & ALgo",
+    "isbn": "1234",
+    "totalCopies": "",
+    "author": "Narasimha Karumanchi",
+    "publisher": "MIT",
+    "tags": ["CODING"]
+}
+###
+GET http://localhost:3000/admin/get-book HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTk1Mjk5NjEsImV4cCI6MTYxOTUzMzU2MX0.U75dAvolYPwULuQepd9q5QkC0XDC4YR2YDVXoW1sLwM
+
+{    
+    "isbn": "9788120337312"
+}
+###
+GET http://localhost:3000/admin/get-books-by-name HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTk0MTMxNjgsImV4cCI6MTYxOTQxNjc2OH0.2izN22cHaGLE79EbpqRyrtCi8ueTfYgI6fe8AwTrxMA
+
+{    
+    "name": "Algo"
+}
+###
+GET http://localhost:3000/admin/get-books-by-tags HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTk0MTMxNjgsImV4cCI6MTYxOTQxNjc2OH0.2izN22cHaGLE79EbpqRyrtCi8ueTfYgI6fe8AwTrxMA
+
+{    
+    "tags": ["GATE", "APTITUDE","CODING"]
+}
+###
+PATCH http://localhost:3000/admin/update-book HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTk0Mzk5OTIsImV4cCI6MTYxOTQ0MzU5Mn0.SaT-uiaCGRbn84ZynvvmPLWtc_0nNTZxnOTqa8LbuNA
+
+{    
+    "name": "DS & ALgorithms",
+    "isbn": "1234",
+    "author": "Narasimha Karumanchi",
+    "publisher": "Oxford"
+}
+###
+DELETE http://localhost:3000/admin/delete-book HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTk0MTMxNjgsImV4cCI6MTYxOTQxNjc2OH0.2izN22cHaGLE79EbpqRyrtCi8ueTfYgI6fe8AwTrxMA
+
+{    
+    "isbn": "1234"
+}
+###
+POST http://localhost:3000/admin/send-message HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTk0MjM5OTgsImV4cCI6MTYxOTQyNzU5OH0.AjXD9_pE_Qri_b7uk4SzVPZgC6Wz_ENKIu9X9joDB2Y
+
+{    
+    "mobile": "9177887457",
+    "message": "Alert!"
+}
+###
+POST http://localhost:3000/admin/accept-order HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTk1MzU5MDUsImV4cCI6MTYxOTUzOTUwNX0.MXyBZ73mfxSpvozS2A7yTe12ORjgn2nwg0S6KVOrTtM
+
+{    
+    "isbn": "9788193245279",
+    "studentId": "B161480"
+}
+###
+POST http://localhost:3000/admin/book-returned HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTk0MjM5OTgsImV4cCI6MTYxOTQyNzU5OH0.AjXD9_pE_Qri_b7uk4SzVPZgC6Wz_ENKIu9X9joDB2Y
+
+{    
+    "isbn": "1234",
+    "studentId": "B161480"
+}
+###
+POST http://localhost:3000/admin/accept-extend-order HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTk1MzU5MDUsImV4cCI6MTYxOTUzOTUwNX0.MXyBZ73mfxSpvozS2A7yTe12ORjgn2nwg0S6KVOrTtM
+
+{    
+    "isbn": "9788193245279",
+    "studentId": "B161480"
+}
+###
+POST http://localhost:3000/admin/reject-extend-order HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTk0MjM5OTgsImV4cCI6MTYxOTQyNzU5OH0.AjXD9_pE_Qri_b7uk4SzVPZgC6Wz_ENKIu9X9joDB2Y
+
+{    
+    "ibn": "1234",
+    "studentId": "B161480"
+}
+###
+GET http://localhost:3000/admin/get-orders HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTk1MzU5MDUsImV4cCI6MTYxOTUzOTUwNX0.MXyBZ73mfxSpvozS2A7yTe12ORjgn2nwg0S6KVOrTtM
+###
+GET http://localhost:3000/admin/get-extend-requested-orders HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTk1MzU5MDUsImV4cCI6MTYxOTUzOTUwNX0.MXyBZ73mfxSpvozS2A7yTe12ORjgn2nwg0S6KVOrTtM
+###
+GET http://localhost:3000/admin/get-submission-nearing-orders HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkIxNjE0MDgiLCJpYXQiOjE2MTk1Mzk2ODQsImV4cCI6MTYxOTU0MzI4NH0.f-Jm2F4R8ptTLUbiakjidkcHUBy2yJFC-KuUpOoLK8A
+###

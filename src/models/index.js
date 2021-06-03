@@ -1,0 +1,10 @@
+module.exports.adminModel = require('./admin.model');
+module.exports.facultyModel = require('./faculty.model');
+module.exports.studentModel = require('./student.model');
+module.exports.bookModel = require('./book.model');
+module.exports.filterModel = require('./filter.model');
+module.exports.ratingModel = require('./rating.model');
+module.exports.orderModel = require('./order.model');
+module.exports.historyModel = require('./history.model');
+module.exports.favoriteModel = require('./favorite.model');
+module.exports.otpModel = require('./otp.model');
