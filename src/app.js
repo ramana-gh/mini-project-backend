@@ -9,6 +9,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+app.use('/test', (req, res) => {res.send({"test": "Success!"})});
 app.use('/', routes);
 app.use((err, req, res, next) => {
     const message = err.details.body[0].context.label;
