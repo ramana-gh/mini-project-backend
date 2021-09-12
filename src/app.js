@@ -18,7 +18,7 @@ app.use((err, req, res, next) => {
     return res.status(401).send({message: err.message});
 });
 
-mongoose.connect(process.env.LOCAL_MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
+mongoose.connect(process.env.ONLINE_MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
     console.log('Connected to MongoDB');
     app.listen(3001, () => console.log('Listening to port: 3001'));
 });
