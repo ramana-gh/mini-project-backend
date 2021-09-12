@@ -1,5 +1,6 @@
 const unirest = require("unirest");
 const adminService = require('../services/admin.service');
+require('dotenv').config();
 
 const adminRegister = async (req, res) => {
     if (await adminService.isIdTaken(req.body.adminId))
@@ -207,7 +208,7 @@ const adminSendMessage = async (req, resp) => {
     const student = await adminService.getStudent(req.body.studentId);
     const mobile = student.mobile;
     const message = req.body.message;
-    const API_KEY = "5KZn3hL4GtMDjHwUmSuWbyAdOE1JNzY7vVgFaI8qixPRC0Tl96zY9oX6aIgqBW3OSLbR8MDQTUuvtAJi";
+    const API_KEY = process.env.API_KEY;
     req = unirest("GET", "https://www.fast2sms.com/dev/quick-templates?authorization="+API_KEY);
     req.headers({
         "cache-control": "no-cache"

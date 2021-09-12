@@ -165,7 +165,7 @@ const facultyRateBook = async (req, res) => {
         addedBy: await facultyService.getCurrentFacultyId(req.headers)
     }
     if (await facultyService.rateBook(ratingInfo))
-        res.status(200).send({message: 'Rating added successfully!' });
+        res.status(200).send({message: 'Rating updated successfully!' });
     else   
         res.status(401).send({message: 'Something went wrong! Try Again.'});
 };
@@ -173,7 +173,7 @@ const facultyRateBook = async (req, res) => {
 const facultyTagBook = async (req, res) => {
     await facultyService.updateFilterTags(req.body.tags);
     if (await facultyService.tagBook(req.body))
-        res.status(200).send({message: 'Tags added successfully!' });
+        res.status(200).send({message: 'Tags updated successfully!' });
     else   
         res.status(401).send({message: 'Something went wrong! Try Again.'});
 };

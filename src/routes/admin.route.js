@@ -6,7 +6,6 @@ const validation = require('express-validation');
 
 const router = express.Router();
 
-router.get('/test', (req, res) => {res.send({"test": "Success!"})});
 router.post('/register', validation.validate(adminValidation.adminRegister), adminController.adminRegister);
 router.post('/login', validation.validate(adminValidation.adminLogin), adminController.adminLogin);
 router.post('/logout', validation.validate(adminValidation.adminLogout), adminController.adminLogout);

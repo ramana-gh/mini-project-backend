@@ -2,9 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes');
 const validation = require('express-validation');
-require('dotenv').config();
-const PORT = process.env.PORT || '3001';
 const cors = require('cors');
+require('dotenv').config();
 
 const app = express();
 
@@ -19,7 +18,7 @@ app.use((err, req, res, next) => {
     return res.status(401).send({message: err.message});
 });
 
-mongoose.connect('mongodb+srv://Ramana:gotvj7YRCb99Ow5J@departmentlibrary.3xnhs.mongodb.net/departmentLibraryDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
+mongoose.connect(process.env.LOCAL_MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
     console.log('Connected to MongoDB');
-    app.listen(PORT, () => console.log(`Listening to port: ${PORT}`));
+    app.listen(3001, () => console.log('Listening to port: 3001'));
 });

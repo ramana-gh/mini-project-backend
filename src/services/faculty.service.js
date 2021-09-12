@@ -152,7 +152,8 @@ const rateBook = async (ratingBody) => {
 };
 
 const tagBook = async (reqBody) => {
-    return await bookModel.updateOne({isbn: reqBody.isbn}, {$addToSet:{tags:{$each:reqBody.tags}}});
+    // return await bookModel.updateOne({isbn: reqBody.isbn}, {$addToSet:{tags:{$each:reqBody.tags}}});
+    return await bookModel.updateOne({isbn: reqBody.isbn}, {$set: {tags: reqBody.tags}});
 };
 
 const getRating = async (isbn, addedBy) => {

@@ -206,7 +206,6 @@ const searchBooks = async (reqBody) => {
         query = {...query, rating: {$in: reqBody.ratings}}
 
     const books = await bookModel.find(query);
-
     if (books)
         return books;
     else
